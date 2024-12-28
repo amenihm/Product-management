@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+.highlight {
+    background-color: yellow;
+    /* Background color when highlighted */
+    padding: 10px;
+    /* Padding around the element */
+    border: 1px solid black;
+    /* Border around the element */
+}

@@ -1,0 +1,12 @@
+/* Add your styles here */
+
+h2 {
+    color: #333;
+}
+
+.product-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}

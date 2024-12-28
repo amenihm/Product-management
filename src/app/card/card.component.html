@@ -1,0 +1,14 @@
+<div class="card">
+    <img [src]="image" alt="{{ title }}" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">{{ title }}</h5>
+        <p class="card-text">{{ description }}</p>
+        <p class="card-text">{{ category }}</p>
+        <p *ngIf="isAvailable" class="text-success">Disponible</p>
+        <p *ngIf="!isAvailable" class="text-danger">Indisponible</p>
+        <!-- Bouton d'ajout à la shortlist -->
+        <button class="btn btn-primary" (click)="onAddToShortlist()" [disabled]="isAdded">
+  {{ isAdded ? 'Ajouté à la shortlist' : 'Add to shortList' }}
+</button>
+    </div>
+</div>

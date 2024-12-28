@@ -1,0 +1,10 @@
+<!-- Si la description est présente, affichez-la -->
+<div *ngIf="description">
+    <h3>Details</h3>
+    <p>{{ description }}</p>
+</div>
+
+<!-- Si la description est vide ou absente -->
+<div *ngIf="!description">
+    <p>Aucune description disponible</p>
+</div>

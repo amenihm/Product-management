@@ -1,0 +1,28 @@
+<!--<div class="search-container">
+    <input type="text" [(ngModel)]="title" placeholder="Rechercher par titre de catégorie" class="form-control">
+</div>
+
+<div class="row">
+    <div class="col-md-4 category-item" *ngFor="let category of categories | filter:title" appHighlight>
+        <img [src]="category.image" alt="{{ category.title }}" class="img-fluid h-50 w-75" (click)="showDescription(category.description)">
+        <h3>{{ category.title | uppercase }}</h3>
+        <p>{{ category.description }}</p>
+        <button class="btn btn-primary" [routerLink]="['/products-category', category.id]">Voir produits</button>
+        <button class="btn btn-secondary" [routerLink]="['/products-category-qp']" [queryParams]="{ id: category.id }">Voir produits 2</button>
+        <p *ngIf="!category.available" class="text-danger">Catégorie non disponible</p>
+    </div>
+</div>
+
+<app-details-category [description]="selectedDescription"></app-details-category>-->
+
+<div class="list-categories">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let category of categories">
+            <app-card [title]="category.title" [image]="category.image" [description]="category.description" [category]="category.title" [isAvailable]="category.available" (addToShortlist)="handleAddToShortlist(category)">
+            </app-card>
+        </div>
+    </div>
+</div>
+
+<!-- Ajouter ListProductsComponent -->
+<app-list-products></app-list-products>

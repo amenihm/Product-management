@@ -1,0 +1,11 @@
+/* Personnalisation des couleurs si nécessaire */
+
+.navbar-dark {
+    background-color: #343a40;
+    /* Couleur foncée */
+}
+
+.navbar-light {
+    background-color: #f8f9fa;
+    /* Couleur claire */
+}

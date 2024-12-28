@@ -1,0 +1,8 @@
+<div class="list-products">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let product of listProducts">
+            <app-card [title]="product.title" [image]="product.image" [description]="product.description" [isAvailable]="product.quantity > 0" (addToShortlist)="addProductToShortlist(product)">
+            </app-card>
+        </div>
+    </div>
+</div>

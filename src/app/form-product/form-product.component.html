@@ -1,0 +1,54 @@
+<div class="container">
+    <h2>Add Product</h2>
+
+    <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+
+        <!-- Champ Name (obligatoire, min 5 caractères, lettres uniquement) -->
+        <div class="form-group">
+            <label for="name">Product Name</label>
+            <input id="name" name="name" [(ngModel)]="product.name" #name="ngModel" [required]="true" [minlength]="5" [pattern]="'[a-zA-Z]*'" class="form-control" />
+            <div *ngIf="name.invalid && name.touched" class="text-danger">
+                <small *ngIf="name.errors?.['required']">Name is required.</small>
+                <small *ngIf="name.errors?.['minlength']">Name must be at least 5 characters.</small>
+                <small *ngIf="name.errors?.['pattern']">Name must contain only letters.</small>
+            </div>
+        </div>
+
+        <!-- Champ Price (obligatoire, chiffres ou décimales) -->
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input id="price" name="price" type="text" [(ngModel)]="product.price" #price="ngModel" [required]="true" [pattern]="'^\\d+(\\.\\d+)?$'" class="form-control" />
+            <div *ngIf="price.invalid && price.touched" class="text-danger">
+                <small *ngIf="price.errors?.['required']">Price is required.</small>
+                <small *ngIf="price.errors?.['pattern']">Price must be a valid number.</small>
+            </div>
+        </div>
+
+        <!-- Champ Category (obligatoire) -->
+        <div class="form-group">
+            <label for="categoryId">Category</label>
+            <input id="categoryId" name="categoryId" type="number" [(ngModel)]="product.categoryId" #categoryId="ngModel" [required]="true" class="form-control" />
+            <div *ngIf="categoryId.invalid && categoryId.touched" class="text-danger">
+                <small *ngIf="categoryId.errors?.['required']">Category is required.</small>
+            </div>
+        </div>
+
+        <!-- Champ Promotion (valeur max 100) -->
+        <div class="form-group">
+            <label for="promotion">Promotion</label>
+            <input id="promotion" name="promotion" type="number" [(ngModel)]="product.promotion" #promotion="ngModel" [pattern]="'^(0|[1-9][0-9]?)$'" class="form-control" />
+            <div *ngIf="promotion.invalid && promotion.touched" class="text-danger">
+                <small *ngIf="promotion.errors?.['pattern']">Promotion must be a number between 0 and 100.</small>
+            </div>
+        </div>
+
+        <!-- Champ Image (facultatif) -->
+        <div class="form-group">
+            <label for="image">Image URL</label>
+            <input id="image" name="image" [(ngModel)]="product.image" class="form-control" />
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">Save</button>
+    </form>
+</div>

@@ -1,0 +1,26 @@
+.card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: #666;
+}
+
+.card-unavailable {
+    color: red;
+}
